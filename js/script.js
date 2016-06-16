@@ -11,9 +11,8 @@ catch (e) {
 //https://api.github.com/users/floresnathaniel83
 //https://api.github.com/users/floresnathaniel83/repos
 
-var promiseProfileUrlRoot = "https://api.github.com/users/floresnathaniel83",
+var promiseProfileUrlRoot = "https://api.github.com/users/",
 	repoUrlRoot = "https://api.github.com/users/",
-	token = Global_Token
 	profileParams = {
 		//login: "floresnathaniel83",
 		// name: "Nathaniel Flores",
