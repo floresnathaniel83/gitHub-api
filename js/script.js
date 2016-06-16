@@ -1,43 +1,48 @@
 console.log("hello world")
 
-/*try { >>>>>to make gh-pages to work
+try { 
 	var token = GLOBAL_TOKEN
 }
 catch (e) {
 	var token = ''
 }
-*/
+
 
 //https://api.github.com/users/floresnathaniel83
 //https://api.github.com/users/floresnathaniel83/repos
 
-var promiseProfileUrlRoot = "https://api.github.com/users/",
+var promiseProfileUrlRoot = "https://api.github.com/users/floresnathaniel83",
 	repoUrlRoot = "https://api.github.com/users/",
 	token = Global_Token
 	profileParams = {
 		//login: "floresnathaniel83",
-		name: "Nathaniel Flores",
-		blog: null,
-		location: "Houston, TX",
-		email: "floresnathaniel83@gmail.com",
-		avatar_url: "https://avatars.githubusercontent.com/u/18020008?v=3",
-		html_url: "https://github.com/floresnathaniel83",
-		created_at: "2016-03-23T02:21:11Z",
-		followers: 0,
-		following: 0,
-		access_token: token
+		// name: "Nathaniel Flores",
+		// blog: null,
+		// location: "Houston, TX",
+		// email: "floresnathaniel83@gmail.com",
+		// avatar_url: "https://avatars.githubusercontent.com/u/18020008?v=3",
+		// html_url: "https://github.com/floresnathaniel83",
+		// created_at: "2016-03-23T02:21:11Z",
+		// followers: 0,
+		// following: 0
 	}
+
 	repoParams = {
-		access_token: token
 	}
+
+	if (token) {
+		profileParams.access_token = token
+		repoParams.access_token = token
+	}
+
 
 var gitHubQuery = function(loginInput) {
 
-	profileParams.login = loginInput
+	// profileParams.login = loginInput
 
-	var promiseProfileUrlFull = promiseProfileUrlRoot + profileParams.login + genParamString(profileParams)
+	var promiseProfileUrlFull = promiseProfileUrlRoot + loginInput + genParamString(profileParams)
 	console.log(promiseProfileUrlFull)
-	var repoUrlFull = repoUrlRoot + profileParams.login + "/repos" + genParamString(repoParams)
+	var repoUrlFull = repoUrlRoot + loginInput + "/repos" + genParamString(repoParams)
 	console.log(repoUrlFull)
 
 	var profilePromise = $.getJSON(promiseProfileUrlFull)
@@ -53,9 +58,15 @@ var genParamString = function(paramObject) {
  	
    	var pString = "?"
     for (var key in paramObject) {
+    	// if we're looking at the access_token key and its value is empty string,
+    	// // skip this iteration
+    	// if (key === "access_token" && !paramObject[key]) {
+    	// 	continue
+    	// }
     	pString += key + "=" + paramObject[key] + "&" 
      }
      return pString.substr(0,pString.length - 1) 
+
    
 }
 
