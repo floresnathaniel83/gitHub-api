@@ -13,7 +13,6 @@ catch (e) {
 
 var promiseProfileUrlRoot = "https://api.github.com/users/floresnathaniel83",
 	repoUrlRoot = "https://api.github.com/users/",
-	token = Global_Token
 	profileParams = {
 		//login: "floresnathaniel83",
 		// name: "Nathaniel Flores",
