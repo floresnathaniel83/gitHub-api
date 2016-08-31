@@ -11,8 +11,37 @@ img {
 
 }
 
+a {
+	color: #4078c0;
+	text-decoration: none;
+	
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+div {
+	margin-bottom: 3%;
+
+}
+
+p {
+	color: grey;
+
+}
+
+span {
+	font-size: 1em;
+    color: grey;
+    margin-left: 4%;
+    white-space: nowrap;
+
+}
+
 #gitHub-icon {
 	width: 50%;
+	margin-left: 20%
 }
 
 #container {
@@ -25,6 +54,7 @@ img {
 
 #leftCol {
 	flex: 1;
+	margin: 3%;
 
 
 }
@@ -43,12 +73,13 @@ img {
 
 #email {
 	color: cornflowerblue;
+	font-weight: bold
 
 }
 
 #search {
 	
-	width: 20%;
+	width: 43%;
     height: 62%;
     padding-left: 1%;
 }
@@ -92,17 +123,41 @@ img {
 #followingContainer {
 	flex: 1;
 	text-align: center;
-	color: cornflowerblue;
 
 }
+
+#followers {
+	color: cornflowerblue;
+	font-weight: 600
+	font-size: 20px;
+
+}
+
+#following {
+	color: cornflowerblue;
+	font-weight: 600
+	font-size: 20px;
+}
+
+.name {
+	color: cornflowerblue;
+	font-weight: bold
+}
 .repoCard {
-	
+	display: flex;
 	font-size: small;
     color: cornflowerblue;
     width: 75%;
     margin: 12%;
-    border-bottom: 1px solid slategrey;
+    border-bottom: 3px solid slategrey;
 
 }
 
+.repo-info {
+	flex: 1;
+}
 
+.userInfo {
+	border-bottom: 1px solid slategrey;
+
+}
